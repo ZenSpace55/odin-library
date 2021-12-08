@@ -16,7 +16,7 @@ h1{
     display: grid;
     margin-left: 7%;
     margin-right: 7%;
-    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
 }
@@ -60,7 +60,7 @@ h1{
     height: 6%;
     left: 94%;
     top: 88%;
-    background-color: rgb(119, 63, 45);
+    background-color: rgb(158, 105, 70);
     border-radius: 8px;
     color: white;
     text-shadow: 2px 2px black;
@@ -69,5 +69,24 @@ h1{
 }
 
 .addBook:hover{
+    transform: scale(1.05);
+}
+
+.removeBook{
+    position: relative;
+    width: 25%;
+    height: 15%;
+    left: 75%;
+    top: 40%;
+    font-size: 24px;
+    font-weight: 800;
+    background-color: rgb(170, 109, 83);
+    color: rgb(190, 74, 74);
+    text-shadow: 2px 2px rgb(51, 22, 22);
+    font-size: 35px;
+    border-width: 0;
+}
+
+.removeBook:hover{
     transform: scale(1.05);
 }
