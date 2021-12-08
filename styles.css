@@ -1,0 +1,73 @@
+html{
+    background: url('img/libraryback.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px black;
+    color: white;
+    background-color: rgb(41, 34, 31);
+    border-radius: 5px;
+}
+
+.bookContainer{
+    display: grid;
+    margin-left: 7%;
+    margin-right: 7%;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.bookCard{
+    height: 300px;
+    background-color: rgb(58, 51, 48);
+    border-radius: 8px;
+    box-shadow: 2px 2px black;
+}
+
+.bookTitle{
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 2px 2px black;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(41, 34, 31);
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.bookAuthor{
+    font-size: 22px;
+    width: 90%;
+    margin-left: 7%;
+    text-align: left;
+    color: white;
+}
+.bookYear{
+    font-size: 18px;
+    margin-right: 7%;
+    width: 100%;
+    text-align: right;
+    color: white;
+}
+
+.addBook{
+    position: fixed;
+    width: 5%;
+    height: 6%;
+    left: 94%;
+    top: 88%;
+    background-color: rgb(119, 63, 45);
+    border-radius: 8px;
+    color: white;
+    text-shadow: 2px 2px black;
+    font-size: 35px;
+    border-width: 0;
+}
+
+.addBook:hover{
+    transform: scale(1.05);
+}
