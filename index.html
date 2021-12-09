@@ -14,12 +14,17 @@
     <div class="newBookForm">
         <div class="formHead"><h2>Add A Book</h2></div>
         <h3>Title:</h3>
-        <input></input>
+        <input id="titleInput" class="newBookText"></input>
         <h3>Author:</h3>
-        <input></input>
+        <input id="authorInput" class="newBookText"></input>
         <h3>Year:</h3>
-        <input></input>
-        <button class="addBook">Add</button>
+        <input id="yearInput" class="newBookText"></input>
+        <div class="checkboxContainer">
+            <input id="readInput" type="checkbox" class="readCheckbox"></input>
+            <p>Have I read this?</p>
+        </div>
+
+        <button onclick="addBookToLibrary()" class="addBook">Add</button>
     </div>
     <div class="bookContainer">
 

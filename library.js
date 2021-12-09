@@ -1,5 +1,10 @@
 let library = [];
 let bookContainer = document.querySelector(".bookContainer");
+let titleInput = document.getElementById("titleInput");
+let authorInput = document.getElementById("authorInput");
+let yearInput = document.getElementById("yearInput");
+let readInput = document.getElementById("readInput");
+
 function Book(title, author, year, read){
     this.title = title;
     this.author = author;
@@ -82,7 +87,14 @@ function removeBook(id){
     buildLibrary();
 }
 
-
+function addBookToLibrary(){
+    addToLibrary(titleInput.value, authorInput.value, yearInput.value, readInput.checked);
+    buildLibrary();
+    titleInput.value = "";
+    authorInput.value = "";
+    yearInput.value = "";
+    readInput.checked = false;
+}
 
 addToLibrary("The Shining", "Stephen King", 1977, 1);
 addToLibrary("A Farewell to Arms", "Ernest Hemmingway", 1993, false);

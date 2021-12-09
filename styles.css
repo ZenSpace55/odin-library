@@ -32,7 +32,8 @@ h1{
 
 .bookTitle{
     text-align: center;
-    font-size: 30px;
+    font-size: 24px;
+    font-weight: 600;
     text-shadow: 2px 2px black;
     color: white;
     padding-top: 10px;
@@ -53,6 +54,7 @@ h1{
 }
 .bookYear{
     font-size: 18px;
+    font-weight: 600;
     margin-right: 5%;
     text-align: right;
     color: white;
@@ -112,11 +114,12 @@ h1{
 .toggleRead{
     text-shadow: 2px 2px rgb(51, 22, 22);
     color: white;
-    background-color: rgb(44, 41, 40);
+    background-color: rgb(116, 100, 90);
     font-size: 24px;
     margin-left:15%;
-    margin-top: 20%;
+    margin-top: 10%;
     width: 70%;
+    height: 25%;
     border-radius: 5px;
     border-width: 0;
     box-shadow: 2px 2px black;
@@ -132,6 +135,7 @@ h1{
 
 .newBookForm{
     position: fixed;
+    display: inline-block;
     width: 20%;
     background-color: rgb(58, 51, 48);
     height: 80%;
@@ -162,7 +166,7 @@ h3{
     color: white;
 }
 
-input{
+.newBookText{
     width: 80%;
     border: none;
     margin-left: 10%;
@@ -171,4 +175,23 @@ input{
     font-size: 20px;
     box-shadow: -2px -2px black;
     border-radius: 5px;
+}
+
+.checkboxContainer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.readCheckbox{
+    height: 25px;
+    width: 25px;
+}
+
+p{
+    color:white;
+    font-size: 20px;
+    margin-left: 5%;
 }
