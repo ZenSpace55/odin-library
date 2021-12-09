@@ -1,7 +1,8 @@
 html{
-    background: url('img/libraryback.jpg') no-repeat center center fixed;
+    background: url('img/libraryback1.jpg') no-repeat center center fixed;
     background-size: cover;
 }
+
 
 h1{
     text-align: center;
@@ -14,11 +15,12 @@ h1{
 
 .bookContainer{
     display: grid;
-    margin-left: 7%;
+    position: relative;
+    margin-left: 22%;
     margin-right: 7%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .bookCard{
@@ -33,39 +35,41 @@ h1{
     font-size: 30px;
     text-shadow: 2px 2px black;
     color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: rgb(41, 34, 31);
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
+    box-shadow: 0px 2px black;
+    height: 20%;
 }
 .bookAuthor{
     font-size: 22px;
     width: 90%;
     margin-left: 7%;
+    margin-top: 5px;
     text-align: left;
     color: white;
 }
 .bookYear{
     font-size: 18px;
-    margin-right: 7%;
-    width: 100%;
+    margin-right: 5%;
     text-align: right;
     color: white;
 }
 
 .addBook{
-    position: fixed;
-    width: 5%;
-    height: 6%;
-    left: 94%;
-    top: 88%;
-    background-color: rgb(158, 105, 70);
-    border-radius: 8px;
+    position: relative;
+    width: 50%;
+    left: 25%;
+    margin-top: 20%;
+    background-color: rgb(41, 34, 31);
+    border-radius: 5px;
     color: white;
     text-shadow: 2px 2px black;
     font-size: 35px;
     border-width: 0;
+    box-shadow: 2px 2px black;
 }
 
 .addBook:hover{
@@ -73,20 +77,98 @@ h1{
 }
 
 .removeBook{
-    position: relative;
-    width: 25%;
-    height: 15%;
-    left: 75%;
-    top: 40%;
+    margin-left: 80%;
+    margin-top: 7%;
+    width: 15%;
+    height: 10%;
+    left: 80%;
+    top: 45%;
     font-size: 24px;
     font-weight: 800;
     background-color: rgb(170, 109, 83);
-    color: rgb(190, 74, 74);
+    background: url('img/trashicon.png') no-repeat;
+    background-size: contain;
+    opacity: .7;
     text-shadow: 2px 2px rgb(51, 22, 22);
     font-size: 35px;
     border-width: 0;
 }
 
 .removeBook:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.changeStatus{
+    background-color: rgb(170, 109, 83);
+    width: 80%;
+    margin-left: 10%;
+}
+
+.changeStatus:hover{
     transform: scale(1.05);
+}
+
+.toggleRead{
+    text-shadow: 2px 2px rgb(51, 22, 22);
+    color: white;
+    background-color: rgb(44, 41, 40);
+    font-size: 24px;
+    margin-left:15%;
+    margin-top: 20%;
+    width: 70%;
+    border-radius: 5px;
+    border-width: 0;
+    box-shadow: 2px 2px black;
+}
+
+.toggleRead:hover{
+    transform: scale(1.05);
+}
+
+.notRead{
+    background-color: rgb(31, 29, 29);
+}
+
+.newBookForm{
+    position: fixed;
+    width: 20%;
+    background-color: rgb(58, 51, 48);
+    height: 80%;
+    box-shadow: 2px 2px black;
+}
+.formHead{
+    height: 10%;
+    margin: 0px;
+    background-color: rgb(41, 34, 31);
+    border-bottom: 2px solid black;
+}
+
+h2{
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 2px 2px black;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    margin-top: 0%;
+    color: white;
+}
+
+h3{
+    text-align: left;
+    margin-left: 5%;
+    font-size: 28px;
+    text-shadow: 2px 2px black;
+    color: white;
+}
+
+input{
+    width: 80%;
+    border: none;
+    margin-left: 10%;
+    background-color: rgb(207, 203, 191);
+    height: 30px;
+    font-size: 20px;
+    box-shadow: -2px -2px black;
+    border-radius: 5px;
 }

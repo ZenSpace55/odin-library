@@ -1,13 +1,36 @@
 let library = [];
 let bookContainer = document.querySelector(".bookContainer");
-function Book(title, author, year){
+function Book(title, author, year, read){
     this.title = title;
     this.author = author;
     this.year = year;
+    this.read = read;
+    this.id = 0;
 }
 
-function addToLibrary(title, author, year){
-    library.push(new Book(title, author, year));
+Book.prototype.toggleRead = function(){
+    if (this.read){
+        this.read = false;
+    }
+    else{
+        this.read = true;
+    }
+    this.displayReadStatus();
+}
+
+Book.prototype.displayReadStatus = function(){
+    if (this.read){
+        bookContainer.childNodes[this.id].querySelector(".toggleRead").textContent = "I've read this";
+        bookContainer.childNodes[this.id].querySelector(".toggleRead").classList.remove("notRead");
+    }
+    else{
+        bookContainer.childNodes[this.id].querySelector(".toggleRead").textContent = "Haven't read";
+        bookContainer.childNodes[this.id].querySelector(".toggleRead").classList.add("notRead");
+    }
+}
+
+function addToLibrary(title, author, year, read){
+    library.push(new Book(title, author, year, read));
 
 }
 
@@ -17,6 +40,7 @@ function buildBookCard(Book, id){
     newCard.parentElement;
     bookContainer.appendChild(newCard);
     newCard.dataset.id = id;
+    Book.id = id;
     let newTitle = document.createElement("div");
     newTitle.className = "bookTitle";
     newTitle.textContent = Book.title;
@@ -29,8 +53,14 @@ function buildBookCard(Book, id){
     newYear.classList.add("bookYear");
     newYear.textContent = Book.year;
     newCard.appendChild(newYear);
+    let readButton = document.createElement("button");
+    readButton.classList.add("toggleRead");
+    readButton.addEventListener('click', () =>{
+        Book.toggleRead();
+    });
+    newCard.appendChild(readButton);
+    Book.displayReadStatus();
     let removeButton = document.createElement("button");
-    removeButton.textContent="R"
     removeButton.classList.add("removeBook");
     removeButton.addEventListener('click', () =>{
         removeBook(newCard.dataset.id);
@@ -53,13 +83,14 @@ function removeBook(id){
 }
 
 
-addToLibrary("The Shining", "Stephen King", 1977);
-addToLibrary("A Farewell to Arms", "Ernest Hemmingway", 1993);
-addToLibrary("The Road", "Cormac McCarthy", 2006);
-addToLibrary("A Simple Plan", "Scott Smith", 1929);
-addToLibrary("The Hobbit", "JRR Tolkien", 1937);
-addToLibrary("Dune", "Frank Herbert", 1965);
-addToLibrary("Cannery Row", "John Steinbeck", 1945);
-addToLibrary("Redwall", "Brian Jacques", 1986);
+
+addToLibrary("The Shining", "Stephen King", 1977, 1);
+addToLibrary("A Farewell to Arms", "Ernest Hemmingway", 1993, false);
+addToLibrary("The Road", "Cormac McCarthy", 2006, false);
+addToLibrary("A Simple Plan", "Scott Smith", 1929, true);
+addToLibrary("The Hobbit", "JRR Tolkien", 1937, true);
+addToLibrary("Dune", "Frank Herbert", 1965, true);
+addToLibrary("Cannery Row", "John Steinbeck", 1945, false);
+addToLibrary("Redwall", "Brian Jacques", 1986, true);
 
 buildLibrary();
