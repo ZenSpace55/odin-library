@@ -35,11 +35,13 @@ Book.prototype.displayReadStatus = function(){
 }
 
 function addToLibrary(title, author, year, read){
+
     library.push(new Book(title, author, year, read));
 
 }
 
 function buildBookCard(Book, id){
+
     let newCard = document.createElement("div");
     newCard.classList.add("bookCard");
     newCard.parentElement;
@@ -88,6 +90,18 @@ function removeBook(id){
 }
 
 function addBookToLibrary(){
+    if (!document.getElementById("titleInput").checkValidity()){
+        console.log("INVALID INPUT");
+        return;
+    }
+    else if (!document.getElementById("authorInput").checkValidity()){
+        console.log("INVALID INPUT");
+        return;
+    }
+    else if (!document.getElementById("yearInput").checkValidity()){
+        console.log("INVALID INPUT");
+        return;
+    }
     addToLibrary(titleInput.value, authorInput.value, yearInput.value, readInput.checked);
     buildLibrary();
     titleInput.value = "";
